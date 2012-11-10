@@ -19,3 +19,6 @@ apple_kbd_ALUKBD_XKB_PC_KEYS=1
 # 2: function keys
 # Linux-specific configuration, relies on kernel module hid_apple
 apple_kbd_ALUKBD_KMOD_FNMODE=1
+
+# Swap left ALT and CMD keys
+apple_kbd_ALUKBD_SWAP_LEFT_ALT_CMD=1

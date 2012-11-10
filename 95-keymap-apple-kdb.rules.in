@@ -23,6 +23,8 @@ ACTION=="add|change", IMPORT{program}="/bin/grep ^apple_kbd_ @CONFIGDIR@/apple-k
 
 # commented until the fn key is known by udev
 # ENV{apple_kbd_ALUKBD_FN_AS_INS}!="1", RUN+="keymap $env{DEVNAME} 0xff0003 464"
+ENV{apple_kbd_ALUKBD_SWAP_LEFT_ALT_CMD}=="1", RUN+="keymap $env{DEVNAME} 0x700e2 leftmeta"
+ENV{apple_kbd_ALUKBD_SWAP_LEFT_ALT_CMD}=="1", RUN+="keymap $env{DEVNAME} 0x700e3 leftalt"
 ENV{apple_kbd_ALUKBD_FN_AS_INS}=="1", RUN+="keymap $env{DEVNAME} 0xff0003 insert"
 ENV{apple_kbd_ALUKBD_XKB_PC_KEYS}=="1", ENV{XKBOPTIONS}="apple:alupckeys,$env{XKBOPTIONS}"
 ENV{apple_kbd_ALUKBD_XKB_PC_KEYS}=="1", IMPORT{program}="/bin/sh -c 'echo XKBOPTIONS=$${XKBOPTIONS%,}'"
